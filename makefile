@@ -3,7 +3,7 @@
 	nuget restore SteamAuth/SteamAuth/SteamAuth.sln
 	mcs -target:library -out:build/SteamAuth.dll -r:SteamAuth/SteamAuth/packages/Newtonsoft.Json.11.0.1/lib/net45/Newtonsoft.Json.dll SteamAuth/SteamAuth/APIEndpoints.cs SteamAuth/SteamAuth/AuthenticatorLinker.cs SteamAuth/SteamAuth/Confirmation.cs SteamAuth/SteamAuth/SessionData.cs SteamAuth/SteamAuth/SteamGuardAccount.cs SteamAuth/SteamAuth/SteamWeb.cs SteamAuth/SteamAuth/TimeAligner.cs SteamAuth/SteamAuth/UserLogin.cs SteamAuth/SteamAuth/Util.cs SteamAuth/SteamAuth/Properties/AssemblyInfo.cs
 	cp SteamAuth/SteamAuth/packages/Newtonsoft.Json.11.0.1/lib/net45/Newtonsoft.Json.dll build/
-	mcs -out:build/steamguard -r:build/SteamAuth.dll -r:build/Newtonsoft.Json.dll -r:/usr/lib/mono/4.5/System.Security.dll Program.cs Manifest.cs AssemblyInfo.cs Utils.cs
+	mcs -out:build/steamguard -r:build/SteamAuth.dll -r:build/Newtonsoft.Json.dll -r:/usr/local/Cellar/mono/5.18.0.225/lib/mono/gac/System.Security/4.0.0.0__b03f5f7f11d50a3a/System.Security.dll Program.cs Manifest.cs AssemblyInfo.cs Utils.cs
 
 run:
 	build/steamguard -v
